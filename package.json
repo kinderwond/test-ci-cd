@@ -1,0 +1,22 @@
+{
+  "name": "test-ci-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinderwond/test-ci-cd.git"
+  },
+  "author": "Nedilko Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinderwond/test-ci-cd/issues"
+  },
+  "homepage": "https://github.com/kinderwond/test-ci-cd#readme",
+  "dependencies": {
+    "koa": "^2.13.4"
+  }
+}

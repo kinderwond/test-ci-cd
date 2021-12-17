@@ -8,6 +8,7 @@ describe('module:users:routes', () => {
     //register tests
     it(`should failing validation of registration`, async () => {
 
-        expect(422).toBe(422);
+        // expect(422).toBe(422);
+        expect(process.env.SECRET1).toBe("test-secret")
     });
 });

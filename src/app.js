@@ -5,4 +5,4 @@ app.use(async ctx => {
     ctx.body = 'Hello ci cd test!';
 });
 
-app.listen(3000);
+module.exports = app

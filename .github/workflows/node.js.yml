@@ -26,6 +26,6 @@ jobs:
     - run: npm ci
     - run: npm i
     - name: Retrieve test secret
-        env:
-            - SECRET1: ${{ secrets.SECRET1 }}
-        run: npm run test
+      run: npm run test
+      env:
+        SECRET1: ${{ secrets.SECRET1 }}

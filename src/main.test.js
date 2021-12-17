@@ -8,6 +8,6 @@ describe('module:users:routes', () => {
     //register tests
     it(`should failing validation of registration`, async () => {
 
-        expect(422).toBe(422);
+        expect(412).toBe(422);
     });
 });

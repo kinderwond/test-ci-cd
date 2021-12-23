@@ -25,7 +25,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm i
-    - name: Retrieve test secret
-      run: npm run test
+    - name: Retrieve secret
       env:
         SECRET1: ${{ secrets.SECRET1 }}
+    - name: Run tests
+      run: npm run test

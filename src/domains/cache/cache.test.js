@@ -1,10 +1,8 @@
-const cacheService = require("./")
+const {getCacheService} = require("./")
 describe('module:cache', () => {
     it(`should init cache service`, async () => {
-        const url = process.env.CACHE_URL
-
         return expect(1).toBe(1) //mock test
-        const cache = new cacheService(url)
+        const cache = getCacheService()
 
         setTimeout(async () => {
             const rndKey = Math.random().toFixed(4)

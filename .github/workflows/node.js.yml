@@ -28,5 +28,6 @@ jobs:
     - name: Retrieve secret
       env:
         SECRET1: ${{ secrets.SECRET1 }}
+    - uses: actions/checkout@v2
     - name: Run tests
       run: npm run test

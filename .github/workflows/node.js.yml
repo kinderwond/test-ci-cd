@@ -44,6 +44,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
+      - uses: actions/checkout@v2
       - name: Restart server
       - run: npm i
       - run: touch ${{secrets.HELLO_FILE}}

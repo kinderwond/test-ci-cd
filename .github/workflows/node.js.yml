@@ -44,6 +44,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
+      - run: ls -a
       - run: touch ${{secrets.HELLO_FILE}}
 
       # - name: Restart server

@@ -45,6 +45,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
       - run: ls -a
+      - run: printenv
       - run: touch ${{secrets.HELLO_FILE}}
 
       # - name: Restart server

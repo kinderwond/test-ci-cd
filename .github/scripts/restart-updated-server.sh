@@ -13,3 +13,6 @@ git pull origin main
 echo "Install app dependencies"
 sudo rm -rf node_modules
 sudo npm install
+
+echo "Print current env"
+printenv

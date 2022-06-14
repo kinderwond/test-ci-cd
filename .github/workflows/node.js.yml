@@ -27,4 +27,5 @@ jobs:
           script: |
             ls
             cd ./test-ci-cd
+            ls
             sh ./.github/scripts/restart-updated-server.sh

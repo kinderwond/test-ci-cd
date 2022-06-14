@@ -21,7 +21,7 @@ jobs:
           host: ${{ secrets.EC2_SSH_HOST }}
           username: ${{ secrets.EC2_SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          script: sh ../scripts/deploy.sh
+          script: sh ./.github/scripts/restart-updated-server.sh
 #  restart-server:
 #    runs-on: ubuntu-latest
 #    needs: deploy

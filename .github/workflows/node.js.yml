@@ -26,4 +26,5 @@ jobs:
           connect_timeout: 10s
           script: |
             ls
+            cd ./test-ci-cd
             sh ./.github/scripts/restart-updated-server.sh

@@ -27,4 +27,17 @@ jobs:
           TARGET: ${{ secrets.TARGET_DIR }}
       - run: rm -rf node_modules
       - run: npm i
-      # - run: pm2 restart server 
+
+      - name: AWS SSM Send-Command
+        uses: peterkimzz/aws-ssm-send-command@master
+        id: ssm
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          instance-ids: ${{ secrets.INSTANCE_ID }}
+
+        run: echo "Let's restart server"
+        working-directory: ~/test-ci-cd
+        command: ls -al
+        comment: Hello world!

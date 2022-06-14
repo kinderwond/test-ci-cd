@@ -5,7 +5,7 @@ echo "Jump to app folder"
 cd ~/test-ci-cd
 
 echo "Update app from Git"
-git checkout main
+#git checkout main
 
 echo "Pull updates"
 git pull origin main

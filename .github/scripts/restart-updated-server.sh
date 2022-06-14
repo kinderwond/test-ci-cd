@@ -14,6 +14,7 @@ echo "Install app dependencies"
 sudo rm -rf node_modules
 sudo npm install
 
+printenv
 #echo "Build your app"
 #sudo npm run build
 #

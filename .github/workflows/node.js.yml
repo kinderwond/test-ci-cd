@@ -44,5 +44,5 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
 
           working-directory: ~/test-ci-cd
-          command: npm i
+          command: touch hello-world.txt
           comment: Hello world!

@@ -9,16 +9,15 @@ on:
 
 jobs:
   export_env:
-    runs-on: ubuntu-latest
     name: Testing the exported env
-    env:
-      SECRET1: ${{ secrets.SECRET1 }}
+    runs-on: ubuntu-latest
+
     steps:
       - name: export secrets
-      uses: shine1594/secrets-to-env-action@master
-      with:
-        secrets: ${{ toJSON(secrets) }}
-        secrets_env: all
+        uses: shine1594/secrets-to-env-action@master
+        with:
+          secrets: ${{ toJSON(secrets) }}
+          secrets_env: all
 
   deploy:
     name: Deploy

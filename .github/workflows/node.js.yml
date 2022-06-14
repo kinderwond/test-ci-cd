@@ -24,4 +24,4 @@ jobs:
           user: ${{ secrets.EC2_SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           connect_timeout: 10s
-          script: ./.github/scripts/restart-updated-server.sh
+          script: sh ./.github/scripts/restart-updated-server.sh

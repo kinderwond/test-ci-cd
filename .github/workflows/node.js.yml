@@ -18,6 +18,7 @@ jobs:
         command: |
             node -v
             ls
+            pwd
         host: ${{ secrets.EC2_SSH_HOST }}
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}

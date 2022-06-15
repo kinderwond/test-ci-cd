@@ -12,15 +12,24 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: SSH remote run
-      uses: Boberneprotiv/ssh-remove-run@v1
-      with: 
-          private-key-path: ${{ secrets.SSH_KEY  }}
-          host : ${{ secrets.EC2_SSH_HOST  }}
-          user : ${{ secrets.EC2_SSH_USER  }}
-          run: |
-            node -v
-            ls
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_SSH_HOST }}
+        username: ${{ secrets.EC2_SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          node -v
+          ls
+    # - name: SSH remote run
+    #   uses: Boberneprotiv/ssh-remove-run@v1
+    #   with: 
+    #       private-key-path: ${{ secrets.SSH_KEY  }}
+    #       host : ${{ secrets.EC2_SSH_HOST  }}
+    #       user : ${{ secrets.EC2_SSH_USER  }}
+    #       run: |
+    #         node -v
+    #         ls
 
       # - uses: actions/checkout@v2 
       # - name: Deploy in EC2

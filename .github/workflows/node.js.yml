@@ -20,6 +20,7 @@ jobs:
             USER_NAME : ${{ secrets.EC2_SSH_USER  }}
             
         run: |
+          cd ~/test-ci-cd/
           node -v
           ls
           npm i

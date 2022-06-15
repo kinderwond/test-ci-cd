@@ -10,9 +10,12 @@ echo "Update app from Git"
 echo "Pull updates"
 git pull origin main
 
+echo "Check node version"
+node -v
 echo "Install app dependencies"
-sudo rm -rf node_modules
-sudo npm install
+rm -rf node_modules
+npm install
 
 echo "Print current env"
 printenv
+

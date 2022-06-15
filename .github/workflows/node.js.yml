@@ -19,6 +19,11 @@ jobs:
             node -v
             ls
             pwd
+            cd ~/test-ci-cd
+            echo "Lets check node version"
+            node -v
+            echo "Lets check SUDO node version"
+            sudo node -v
         host: ${{ secrets.EC2_SSH_HOST }}
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}

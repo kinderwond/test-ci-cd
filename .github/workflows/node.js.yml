@@ -21,3 +21,4 @@ jobs:
             
         run: |
           node -v
+          ls

@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - uses: actions/checkout@v2 
-     - name: Deploy in EC2
-        env:
+      - name: Deploy in EC2
+      uses: actions/checkout@v2 
+      env:
           PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
           HOSTNAME : ${{ secrets.EC2_SSH_HOST  }}
           USER_NAME : ${{ secrets.EC2_SSH_USER  }}
             
-        run: |
-          node -v
+      run: |
+        node -v
           # echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           # ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           

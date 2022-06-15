@@ -19,6 +19,7 @@ jobs:
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         command: |
+            export PATH=$PATH:copy
             ls
             cd ~/test-ci-cd
             pwd

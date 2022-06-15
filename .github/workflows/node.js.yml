@@ -22,7 +22,7 @@ jobs:
             export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
             cd ~/test-ci-cd
             echo "Kill all the running PM2 actions"
-            sudo pm2 kill
+            pm2 kill
 
             echo "Stash changes"
             git stash

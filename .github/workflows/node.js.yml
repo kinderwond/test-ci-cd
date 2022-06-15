@@ -16,15 +16,13 @@ jobs:
       uses:  fifsky/ssh-action@master
       with:
         host: ${{ secrets.EC2_SSH_HOST }}
-        user: root
-        #${{ secrets.EC2_SSH_USER }}
+        user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         command: |
             ls
             cd ~/test-ci-cd
             pwd
-            node -v
-            sudo ./.github/scripts/restart-updated-server.sh
+            ./.github/scripts/restart-updated-server.sh 
     # - name: executing remote ssh commands using ssh key
     #   uses: appleboy/ssh-action@master
     #   with:

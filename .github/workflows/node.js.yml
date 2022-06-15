@@ -21,5 +21,21 @@ jobs:
         command: |
             export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
             cd ~/test-ci-cd
-            chmod +x ./.github/scripts/restart-updated-server.sh 
-            ./.github/scripts/restart-updated-server.sh 
+            echo "Kill all the running PM2 actions"
+            sudo pm2 kill
+            
+            echo "Stash changes"
+            git stash
+            
+            echo "Pull updates"
+            git pull origin main
+            
+            echo "Check node version"
+            node -v
+            echo "Install app dependencies"
+            rm -rf node_modules
+            npm install
+            
+            # echo "Print current env"
+            # printenv
+

@@ -12,16 +12,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2 
-      - name: Deploy in EC2
-        env:
-            PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
-            HOSTNAME : ${{ secrets.EC2_SSH_HOST  }}
-            USER_NAME : ${{ secrets.EC2_SSH_USER  }}
+    - uses: Boberneprotiv/ssh-remove-run@v1
+    - name: SSH remote run
+      with: 
+          private-key-path: ${{ secrets.SSH_KEY  }}
+          host : ${{ secrets.EC2_SSH_HOST  }}
+          user : ${{ secrets.EC2_SSH_USER  }}
+          run: |
+            node -v
+            ls
+
+      # - uses: actions/checkout@v2 
+      # - name: Deploy in EC2
+      #   env:
+      #       PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
+      #       HOSTNAME : ${{ secrets.EC2_SSH_HOST  }}
+      #       USER_NAME : ${{ secrets.EC2_SSH_USER  }}
             
-        run: |
-          cd /home/ubuntu/test-ci-cd/
-          node -v
-          ls
-          npm i
-          pwd
+      #   run: |
+      #     cd /home/ubuntu/test-ci-cd/
+      #     node -v
+      #     ls
+      #     npm i
+      #     pwd

@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: SSH remote run
-    - uses: Boberneprotiv/ssh-remove-run@v1
+      uses: Boberneprotiv/ssh-remove-run@v1
       with: 
           private-key-path: ${{ secrets.SSH_KEY  }}
           host : ${{ secrets.EC2_SSH_HOST  }}

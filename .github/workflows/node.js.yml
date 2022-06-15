@@ -18,9 +18,9 @@ jobs:
         command: |
             node -v
             ls
-            pwd
             cd ~/test-ci-cd
-            touch hello-file.txt
+            pwd
+            ./github/scripts/restart-updated-server.sh
         host: ${{ secrets.EC2_SSH_HOST }}
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}

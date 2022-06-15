@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: ls -a via ssh
+    - name: Update server on remote instance
       uses:  fifsky/ssh-action@master
       with:
         command: |
@@ -20,10 +20,7 @@ jobs:
             ls
             pwd
             cd ~/test-ci-cd
-            echo "Lets check node version"
-            node -v
-            echo "Lets check SUDO node version"
-            sudo node -v
+            touch hello-file.txt
         host: ${{ secrets.EC2_SSH_HOST }}
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}

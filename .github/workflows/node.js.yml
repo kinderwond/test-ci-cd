@@ -28,4 +28,5 @@ jobs:
             ls
             cd ./test-ci-cd
             ls
+            node -v
             sh ./.github/scripts/restart-updated-server.sh

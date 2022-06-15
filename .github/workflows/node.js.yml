@@ -19,7 +19,7 @@ jobs:
         user: ${{ secrets.EC2_SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         command: |
-            export PATH=$PATH:copy
+            export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
             ls
             cd ~/test-ci-cd
             pwd

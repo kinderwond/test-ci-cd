@@ -9,27 +9,16 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    needs: build
     runs-on: ubuntu-latest
-
+    
     steps:
+      - uses: actions/checkout@v2 
       - name: Deploy in EC2
-      uses: actions/checkout@v2 
-      env:
-          PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
-          HOSTNAME : ${{ secrets.EC2_SSH_HOST  }}
-          USER_NAME : ${{ secrets.EC2_SSH_USER  }}
+        env:
+            PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
+            HOSTNAME : ${{ secrets.EC2_SSH_HOST  }}
+            USER_NAME : ${{ secrets.EC2_SSH_USER  }}
             
-      run: |
-        node -v
-          # echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          # ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-          
-          #   #Now we have got the access of EC2 and we will start the deploy .
-          #   cd /home/ubuntu/CounterApp &&
-          #   git checkout master &&
-          #   git fetch --all &&
-          #   git reset --hard origin/master &&
-          #   git pull origin master &&
-          #   docker-compose -f docker-compose.prod.yml up -d --build 
-          # '
+        run: |
+          node -v

@@ -22,7 +22,7 @@ jobs:
         - name: python cli
           run: | 
             import platform
-            pring
+            print
             (platform.processor())
           shell: python
 #    - name: Update server on remote instance

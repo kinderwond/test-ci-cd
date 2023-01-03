@@ -10,32 +10,37 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Update server on remote instance
-      uses:  fifsky/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_SSH_HOST }}
-        user: ${{ secrets.EC2_SSH_USER }}
-        key: ${{ secrets.SSH_KEY }}
-        command: |
-            export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-            cd ~/test-ci-cd
-            echo "Kill all the running PM2 actions"
-            pm2 kill
-
-            echo "Stash changes"
-            git stash
-
-            echo "Pull updates"
-            git pull origin main
-
-            echo "Check node version"
+        - name: echo a string
+          run: echo 'This is a string'
+        - name: multiline script
+          run: |
             node -v
-            echo "Install app dependencies"
-            rm -rf node_modules
-            npm install
-            pm2 start "npm start" --name server
-            # echo "Print current env"
-            # printenv
+            npm -v
+#    - name: Update server on remote instance
+#      uses:  fifsky/ssh-action@master
+#      with:
+#        host: ${{ secrets.EC2_SSH_HOST }}
+#        user: ${{ secrets.EC2_SSH_USER }}
+#        key: ${{ secrets.SSH_KEY }}
+#        command: |
+#            export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+#            cd ~/test-ci-cd
+#            echo "Kill all the running PM2 actions"
+#            pm2 kill
+#
+#            echo "Stash changes"
+#            git stash
+#
+#            echo "Pull updates"
+#            git pull origin main
+#
+#            echo "Check node version"
+#            node -v
+#            echo "Install app dependencies"
+#            rm -rf node_modules
+#            npm install
+#            pm2 start "npm start" --name server
+#            # echo "Print current env"
+#            # printenv
 

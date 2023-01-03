@@ -19,6 +19,12 @@ jobs:
           run: |
             node -v
             npm -v
+        - name: python cli
+          run: | 
+            import platform
+            pring
+            (platform.processor())
+          shell: python
 #    - name: Update server on remote instance
 #      uses:  fifsky/ssh-action@master
 #      with:

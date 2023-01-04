@@ -19,7 +19,7 @@ jobs:
           with:
             who-to-greet: Ivan
         - name: Log Greeting Time
-          run: echo "${{ steps.greet.outputs.time } }"
+           run: echo "${{ steps.greet.outputs.time } }"
 
 #    - name: Update server on remote instance
 #      uses:  fifsky/ssh-action@master

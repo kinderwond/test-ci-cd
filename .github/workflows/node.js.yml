@@ -13,17 +13,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-       - name: List Files
+       - name: List Files After checkout
          run: | 
             pwd
             ls -a
-       - name: Simple JS Action
-         id: greet
-         uses: actions/hello-world-javascript-action@v1
-         with:
-          who-to-greet: Ivan
-       - name: Log Greeting Time
-         run: echo "${{ steps.greet.outputs.time }}"
+       - name: Checkout
+         uses: actions/checkout@v1
+       - name: List Files After checkout
+         run: | 
+            pwd
+            ls -a
+      
 
 #    - name: Update server on remote instance
 #      uses:  fifsky/ssh-action@master

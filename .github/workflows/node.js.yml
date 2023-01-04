@@ -15,7 +15,7 @@ jobs:
     steps:
        - name: List Files
          run: | 
-            pws
+            pwd
             ls -a
        - name: Simple JS Action
          id: greet
